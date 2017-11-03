@@ -10,6 +10,19 @@ namespace Barrack
     {
         static void Main(string[] args)
         {
+            while (true)
+            {
+                int a = Console.Read();
+                if (a == '1')
+                {
+                    Man soldier = new Man();
+                }
+                if (a == '2')
+                {
+                    Archery soldier = new Archery();
+                }
+            }
+
         }
     }
 }
