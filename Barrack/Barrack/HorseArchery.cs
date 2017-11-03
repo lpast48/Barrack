@@ -7,28 +7,20 @@ using System.Threading.Tasks;
 namespace Barrack
 {
     class HorseArchery
-        :Archery
+        :SoldierBase
     {
-        public HorseArchery(ref Materials m, int gold = 160)
-            : base(ref m, gold)
+        public HorseArchery(ref Materials m)
+            : base(ref m)
         {
-            try
-            {
-                materials.Horse--;
-                Console.WriteLine(" konnego");
-            }
-            catch
-            {
-                Console.WriteLine("Brak koni");
-                base.Back();
-                throw new RecruitmentException();
-            }
-        }
+            Bow bow = new Bow();
+            Horse horse = new Horse();
+            Gold gold = new Gold(160);
 
-        public override void Back()
-        {
-            base.Back();
-            materials.Horse++;
+            _material.Add(bow);
+            _material.Add(horse);
+            _material.Add(gold);
+            base.Use();
+            Console.WriteLine("Stworzono łucznika konnego");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Barrack
     {
         private int people = 10;
         private int spear = 10;
-        private int bow = 20;
+        private int bow = 10;
         private int crossbow = 10;
         private int horse = 10;
         private int gold = 1000;

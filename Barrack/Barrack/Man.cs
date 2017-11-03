@@ -12,6 +12,7 @@ namespace Barrack
         public Man(ref Materials m)
             : base(ref m)
         {
+            base.Use();
             Console.WriteLine("Stworzono chłopa");
         }
     }

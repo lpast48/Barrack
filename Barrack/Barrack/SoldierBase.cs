@@ -8,39 +8,28 @@ namespace Barrack
 {
     abstract class SoldierBase
     {
+        protected List<Material> _material;
         protected Materials materials;
-        protected int gold;
 
-        public SoldierBase(ref Materials m, int gold = 0)
+        public SoldierBase(ref Materials m)
         {
             materials = m;
-            this.gold = gold;
-            try
-            {
-                materials.People--;
-            }
-            catch
-            {
-                Console.WriteLine("brak ludzi");
-                throw new RecruitmentException();
-            }
-
-            try
-            {
-                materials.Gold -= gold;
-            }
-            catch
-            {
-                Console.WriteLine("brak złota");
-                materials.People++;
-                throw new RecruitmentException();
-            }
+            _material = new List<Material>();
+            People people = new People();
+            _material.Add(people);
         }
 
-        virtual public void Back()
+        protected void Use()
         {
-            materials.People++;
-            materials.Gold += gold;
+            foreach (var item in _material)
+            {
+                item.Validate(ref materials);
+            }
+
+            foreach (var item in _material)
+            {
+                item.Use(ref materials);
+            }
         }
     }
 }

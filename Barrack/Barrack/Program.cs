@@ -35,7 +35,6 @@ namespace Barrack
                 }
                 catch
                 {
-                    Console.WriteLine("błąd");
                 }
             }
 
