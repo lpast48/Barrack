@@ -9,8 +9,8 @@ namespace Barrack
     class Man
         : SoldierBase
     {
-        public Man()
-            : base()
+        public Man(ref Materials m)
+            : base(ref m)
         {
             Console.WriteLine("Stworzono chłopa");
         }

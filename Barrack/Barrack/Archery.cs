@@ -9,12 +9,12 @@ namespace Barrack
     class Archery
         : SoldierBase
     {
-        public Archery()
-            :base()
+        public Archery(ref Materials m)
+            :base(ref m)
         {
             try
             {
-                Materials.Bow--;
+                materials.Bow--;
                 Console.Write("Stworzono łucznika");
             }
             catch
@@ -28,7 +28,7 @@ namespace Barrack
         public override void Back()
         {
             base.Back();
-            Materials.Bow++;
+            materials.Bow++;
         }
     }
 }

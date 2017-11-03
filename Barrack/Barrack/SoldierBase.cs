@@ -8,11 +8,14 @@ namespace Barrack
 {
     abstract class SoldierBase
     {
-        public SoldierBase()
+        protected Materials materials;
+
+        public SoldierBase(ref Materials m)
         {
+            materials = m;
             try
             {
-                Materials.People--;
+                materials.People--;
             }
             catch
             {
@@ -23,7 +26,7 @@ namespace Barrack
 
         virtual public void Back()
         {
-            Materials.People++;
+            materials.People++;
         }
     }
 }

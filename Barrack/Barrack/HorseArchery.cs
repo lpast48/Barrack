@@ -9,12 +9,12 @@ namespace Barrack
     class HorseArchery
         :Archery
     {
-        public HorseArchery()
-            : base()
+        public HorseArchery(ref Materials m)
+            : base(ref m)
         {
             try
             {
-                Materials.Horse--;
+                materials.Horse--;
                 Console.WriteLine(" konnego");
             }
             catch
@@ -28,7 +28,7 @@ namespace Barrack
         public override void Back()
         {
             base.Back();
-            Materials.Horse++;
+            materials.Horse++;
         }
     }
 }

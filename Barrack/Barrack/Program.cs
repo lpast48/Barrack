@@ -10,6 +10,7 @@ namespace Barrack
     {
         static void Main(string[] args)
         {
+            Materials materials = new Materials();
             while (true)
             {
                 try
@@ -17,22 +18,29 @@ namespace Barrack
                     int a = Console.Read();
                     if (a == '1')
                     {
-                        Man soldier = new Man();
+                        Man soldier = new Man(ref materials);
                     }
                     if (a == '2')
                     {
-                        Archery soldier = new Archery();
+                        Archery soldier = new Archery(ref materials);
                     }
                     if (a == '3')
                     {
-                        Archery soldier = new HorseArchery();
+                        HorseArchery soldier = new HorseArchery(ref materials);
+                    }
+                    if (a == '4')
+                    {
+                        materials.People += 10;
                     }
                 }
                 catch
                 {
                     Console.WriteLine("błąd");
                 }
-
+                finally
+                {
+                    Console.WriteLine(materials.People);
+                }
             }
 
         }

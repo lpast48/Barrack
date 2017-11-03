@@ -6,86 +6,91 @@ using System.Threading.Tasks;
 
 namespace Barrack
 {
-    static class Materials
+    class Materials
     {
-        static private int people = 10;
-        static public int People
+        private int people = 10;
+        private int spear = 10;
+        private int bow = 20;
+        private int crossbow = 10;
+        private int horse = 10;
+
+        public int People
         {
             get
             {
-                if (people == 0)
-                {
-                    throw new RecruitmentException();
-                }
                 return people;
             }
             set
             {
-                people = value;
-            }
-        }
-
-        static private int spear = 10;
-        static public int Spear
-        {
-            get
-            {
-                if (spear == 0)
+                if (value < 0)
                 {
                     throw new RecruitmentException();
                 }
+                people = value;
+
+            }
+        }
+
+        public int Spear
+        {
+            get
+            {
                 return spear;
             }
             set
             {
-                spear = value;
-            }
-        }
-        static private int bow = 5;
-        static public int Bow
-        {
-            get
-            {
-                if (bow == 0)
+                if (value < 0)
                 {
                     throw new RecruitmentException();
                 }
+                spear = value;
+            }
+        }
+
+        public int Bow
+        {
+            get
+            {
                 return bow;
             }
             set
             {
-                bow = value;
-            }
-        }
-        static private int crossbow = 10;
-        static public int Crossbow
-        {
-            get
-            {
-                if (crossbow == 0)
+                if (value < 0)
                 {
                     throw new RecruitmentException();
                 }
+                bow = value;
+            }
+        }
+
+        public int Crossbow
+        {
+            get
+            {
                 return crossbow;
             }
             set
             {
-                crossbow = value;
-            }
-        }
-        static private int horse = 10;
-        static public int Horse
-        {
-            get
-            {
-                if (horse == 0)
+                if (value < 0)
                 {
                     throw new RecruitmentException();
                 }
+                crossbow = value;
+            }
+        }
+
+        public int Horse
+        {
+            get
+            {
                 return horse;
             }
             set
             {
+                if (value < 0)
+                {
+                    throw new RecruitmentException();
+                }
                 horse = value;
             }
         }
