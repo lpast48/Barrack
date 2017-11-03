@@ -10,6 +10,7 @@ namespace Barrack
         : SoldierBase
     {
         public Archery()
+            :base()
         {
             try
             {
@@ -19,6 +20,8 @@ namespace Barrack
             catch
             {
                 Console.WriteLine("Brak łuków");
+                Materials.People++;
+                throw new RecruitmentException();
             }
         }
     }

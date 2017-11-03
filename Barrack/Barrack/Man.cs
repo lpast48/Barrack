@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Barrack
 {
     class Man
-        :SoldierBase
+        : SoldierBase
     {
         public Man()
             : base()

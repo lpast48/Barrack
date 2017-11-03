@@ -12,15 +12,23 @@ namespace Barrack
         {
             while (true)
             {
-                int a = Console.Read();
-                if (a == '1')
+                try
                 {
-                    Man soldier = new Man();
+                    int a = Console.Read();
+                    if (a == '1')
+                    {
+                        Man soldier = new Man();
+                    }
+                    if (a == '2')
+                    {
+                        Archery soldier = new Archery();
+                    }
                 }
-                if (a == '2')
+                catch
                 {
-                    Archery soldier = new Archery();
+                    Console.WriteLine("błąd");
                 }
+
             }
 
         }

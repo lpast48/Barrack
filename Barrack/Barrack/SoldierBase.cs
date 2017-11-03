@@ -17,6 +17,7 @@ namespace Barrack
             catch
             {
                 Console.WriteLine("brak ludzi");
+                throw new RecruitmentException();
             }
         }
     }

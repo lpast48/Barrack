@@ -8,12 +8,15 @@ namespace Barrack
 {
     static class Materials
     {
-        static private int people = 5;
+        static private int people = 10;
         static public int People
         {
             get
             {
-                Validate();
+                if (people == 0)
+                {
+                    throw new RecruitmentException();
+                }
                 people--;
                 return people;
             }
@@ -28,7 +31,10 @@ namespace Barrack
         {
             get
             {
-                Validate();
+                if (spear == 0)
+                {
+                    throw new RecruitmentException();
+                }
                 spear--;
                 return spear;
             }
@@ -37,12 +43,15 @@ namespace Barrack
                 spear = value;
             }
         }
-        static private int bow = 10;
+        static private int bow = 5;
         static public int Bow
         {
             get
             {
-                Validate();
+                if (bow == 0)
+                {
+                    throw new RecruitmentException();
+                }
                 bow--;
                 return bow;
             }
@@ -56,7 +65,11 @@ namespace Barrack
         {
             get
             {
-                Validate();
+                if (crossbow == 0)
+                {
+                    throw new RecruitmentException();
+                }
+
                 crossbow--;
                 return crossbow;
             }
