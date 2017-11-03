@@ -9,8 +9,8 @@ namespace Barrack
     class HorseArchery
         :Archery
     {
-        public HorseArchery(ref Materials m)
-            : base(ref m)
+        public HorseArchery(ref Materials m, int gold = 160)
+            : base(ref m, gold)
         {
             try
             {

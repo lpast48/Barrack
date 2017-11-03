@@ -9,10 +9,12 @@ namespace Barrack
     abstract class SoldierBase
     {
         protected Materials materials;
+        protected int gold;
 
-        public SoldierBase(ref Materials m)
+        public SoldierBase(ref Materials m, int gold = 0)
         {
             materials = m;
+            this.gold = gold;
             try
             {
                 materials.People--;
@@ -22,11 +24,23 @@ namespace Barrack
                 Console.WriteLine("brak ludzi");
                 throw new RecruitmentException();
             }
+
+            try
+            {
+                materials.Gold -= gold;
+            }
+            catch
+            {
+                Console.WriteLine("brak złota");
+                materials.People++;
+                throw new RecruitmentException();
+            }
         }
 
         virtual public void Back()
         {
             materials.People++;
+            materials.Gold += gold;
         }
     }
 }

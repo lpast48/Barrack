@@ -37,10 +37,6 @@ namespace Barrack
                 {
                     Console.WriteLine("błąd");
                 }
-                finally
-                {
-                    Console.WriteLine(materials.People);
-                }
             }
 
         }

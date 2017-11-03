@@ -13,6 +13,7 @@ namespace Barrack
         private int bow = 20;
         private int crossbow = 10;
         private int horse = 10;
+        private int gold = 1000;
 
         public int People
         {
@@ -92,6 +93,22 @@ namespace Barrack
                     throw new RecruitmentException();
                 }
                 horse = value;
+            }
+        }
+
+        public int Gold
+        {
+            get
+            {
+                return gold;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new RecruitmentException();
+                }
+                gold = value;
             }
         }
     }
