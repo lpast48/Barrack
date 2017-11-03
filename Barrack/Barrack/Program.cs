@@ -23,6 +23,10 @@ namespace Barrack
                     {
                         Archery soldier = new Archery();
                     }
+                    if (a == '3')
+                    {
+                        Archery soldier = new HorseArchery();
+                    }
                 }
                 catch
                 {

@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Barrack
 {
-    class Archery
-        : SoldierBase
+    class HorseArchery
+        :Archery
     {
-        public Archery()
-            :base()
+        public HorseArchery()
+            : base()
         {
             try
             {
-                Materials.Bow--;
-                Console.Write("Stworzono łucznika");
+                Materials.Horse--;
+                Console.WriteLine(" konnego");
             }
             catch
             {
-                Console.WriteLine("Brak łuków");
+                Console.WriteLine("Brak koni");
                 base.Back();
                 throw new RecruitmentException();
             }
@@ -28,7 +28,7 @@ namespace Barrack
         public override void Back()
         {
             base.Back();
-            Materials.Bow++;
+            Materials.Horse++;
         }
     }
 }

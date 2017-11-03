@@ -12,13 +12,18 @@ namespace Barrack
         {
             try
             {
-                int a = Materials.People;
+                Materials.People--;
             }
             catch
             {
                 Console.WriteLine("brak ludzi");
                 throw new RecruitmentException();
             }
+        }
+
+        virtual public void Back()
+        {
+            Materials.People++;
         }
     }
 }

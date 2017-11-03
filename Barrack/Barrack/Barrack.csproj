@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Archery.cs" />
+    <Compile Include="HorseArchery.cs" />
     <Compile Include="Man.cs" />
     <Compile Include="Materials.cs" />
     <Compile Include="Program.cs" />

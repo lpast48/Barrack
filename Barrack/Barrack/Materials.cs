@@ -17,7 +17,6 @@ namespace Barrack
                 {
                     throw new RecruitmentException();
                 }
-                people--;
                 return people;
             }
             set
@@ -35,7 +34,6 @@ namespace Barrack
                 {
                     throw new RecruitmentException();
                 }
-                spear--;
                 return spear;
             }
             set
@@ -52,7 +50,6 @@ namespace Barrack
                 {
                     throw new RecruitmentException();
                 }
-                bow--;
                 return bow;
             }
             set
@@ -69,8 +66,6 @@ namespace Barrack
                 {
                     throw new RecruitmentException();
                 }
-
-                crossbow--;
                 return crossbow;
             }
             set
@@ -78,15 +73,20 @@ namespace Barrack
                 crossbow = value;
             }
         }
-
-        static void Validate()
+        static private int horse = 10;
+        static public int Horse
         {
-            if (people == 0 ||
-                spear == 0 ||
-                bow == 0 ||
-                crossbow == 0)
+            get
             {
-                throw new RecruitmentException();
+                if (horse == 0)
+                {
+                    throw new RecruitmentException();
+                }
+                return horse;
+            }
+            set
+            {
+                horse = value;
             }
         }
     }
